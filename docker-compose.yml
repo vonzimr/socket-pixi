@@ -35,8 +35,8 @@ services:
             dockerfile: frontend.Dockerfile
         volumes:
             - type: bind
-              source: ./frontend
-              target: /app
+              source: ./frontend/src
+              target: /app/src
         working_dir: /app
         command: npm run start
 
