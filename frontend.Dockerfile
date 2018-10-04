@@ -1,6 +1,6 @@
 from node
 ENV PYTHONBUFFERED=0
-WORKDIR APP
+WORKDIR app 
 
 COPY ./frontend /app
 
