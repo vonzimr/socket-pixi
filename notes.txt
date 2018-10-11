@@ -1,0 +1,48 @@
+BACKEND
+====================
+Lobby Class
+--------------------
+    - List of rooms
+    - Should be able to display Room state (From room objects)
+
+Room Class
+--------------------
+    - Game currently in session
+    - Number of players (player IDs, etc.)
+    - The board object
+
+Board Class
+--------------------
+- Board State
+    - Current Turn
+    - Active Player
+    - Pieces on Board
+        - Including player ownership
+    - Current Phase
+
+Player Class
+--------------------
+- Resources
+- Active Player
+- Username (Generated Private ID?)
+- Spectating?
+
+Piece Class (ABC?)
+--------------------
+ - place-able items (buildings)
+ - non-place-able items (gold, workers, etc)
+ - Effects?
+ - Owner (reference to player object)
+
+Additional Notes:
+--------------------
+Should be able to use multiple boards / game.
+
+- Player Board State (Items, Pieces available, etc.)
+
+What Inventory Items do we need to keep track of?
+    - Coins, magic, buildings (concrete example)
+What do clients send to the backend?
+- Chosen piece in Inventory
+- Desired location of piece
+- Inventory Items - Which
