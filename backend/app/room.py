@@ -15,12 +15,14 @@ class Room:
         return len(self._players.keys())
 
     def __repr__(self):
-        players = "".join(["{}, ".format(player.player_name) for player in self._players.values()])
+        players = [p.name for p in self._players.values()]
+        players = ",".join(["{}".format(player) for player in players])
+
         return "{}|{}".format(self.name, players)
 
     def save_room(self):
         """
-        Save the current Room state to some databse or something?
+        Save the current Room state to some database or something?
         :return:
         """
         pass
