@@ -1,7 +1,8 @@
-import secrets
-import struct
+import aiohttp
 from aiohttp import web
-import asyncio
+
+from backend.app.client import Client, notify_clients, clients
+
 
 async def websocket_handler(request):
     ws = web.WebSocketResponse()

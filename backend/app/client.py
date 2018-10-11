@@ -1,13 +1,27 @@
+import struct
+import secrets
+
+clients = {}
+
+
+async def notify_clients(this_client):
+    for client in clients.values():
+        if client.cid == this_client.cid:
+            continue
+        else:
+            await client.notify(this_client)
+
+
 class Client:
     pos = struct.Struct("<II")
     client_pos = struct.Struct("<III")
-    
+
     def __init__(self, ws):
         self._ws = ws
-        self.x = 0 
-        self.y = 0 
+        self.x = 0
+        self.y = 0
         self.cid = secrets.randbits(32)
-    
+
     def update_pos(self, b):
         self.x, self.y = self.pos.unpack(b)
 
